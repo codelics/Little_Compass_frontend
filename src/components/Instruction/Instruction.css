@@ -1,0 +1,26 @@
+/* src/Instruction.css */
+.instruction-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  max-width: 90%;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.instruction-content h2 {
+  margin-top: 0;
+}
+
+.instruction-content ol {
+  padding-left: 1.2rem;
+}
+
+.instruction-content li + li {
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,60 @@
+/* src/components/MenuButton.css */
+.menu-wrapper {
+  position: absolute;   /* relative to parent (.App-header) */
+  top: 2rem;            /* moved down from 1rem to 2rem */
+  left: 1rem;
+  z-index: 100;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu-button:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  top: 2.5rem;        /* just under the button */
+  left: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.menu-list li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.menu-list li:hover {
+  background: #f0f0f0;
+}
+
+.hamburger-icon {
+  font-size: 1.5rem;
+}
+
+.menu-label {
+  margin-left: 0.6rem;
+  position: relative;
+  top: 2px;            /* nudge the label down */
+  font-size: 1rem;
+  color: inherit;
+  user-select: none;
+}

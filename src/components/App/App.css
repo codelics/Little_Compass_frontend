@@ -1,0 +1,130 @@
+/* src/styles/App.css */
+
+.App {
+  text-align: center;
+}
+
+.illustration {
+  width: 450px;
+  height: auto;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* ——————————————————————
+   meditation image styling
+   —————————————————————— */
+.meditation_img {
+  position: fixed;
+  top: 2px;
+  right: 20px;
+  width: 300px;
+  height: auto;
+  z-index: 10;
+}
+
+.smile_img {
+  position: fixed;
+  top: 460px;
+  right: 20px;
+  width: 300px;
+  height: auto;
+  z-index: 10;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  position: relative; /* for absolute children */
+  background-color: #E0F7FF;
+  min-height: 100vh;
+  padding-top: 3rem;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.tagline {
+  font-weight: 85;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ✅ IntroArea pinned to the top center */
+.IntroArea {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+
+/* ✅ Hero fade (optional) */
+.Hero {
+  transition: opacity 0.4s ease;
+}
+
+/* ✅ Hidden state fully removes it visually */
+.Hero.hidden {
+  display: none;
+}
+
+/* ✅ ChatContainer pinned below the intro */
+.ChatContainer {
+  position: relative;
+  width: 100%;
+}
+
+/* Utility to hide any element */
+.hidden {
+  display: none !important;
+}
+
+/* Centered banner for the About screen */
+.about-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 200;
+}
