@@ -31,11 +31,13 @@ function ChatBox({ onFirstMessageSent }) {
     setInput("");
 
     try {
-      const response = await fetch("http://localhost:8000/chat", {
+      const base = process.env.REACT_APP_API_URL;    // e.g. "https://little-compass-backend.onrender.com"
+      const response = await fetch(`${base}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: newMessage.text })
+        body: JSON.stringify({ message: newMessage.text }),
       });
+
 
       const data = await response.json();
       const botMessage = { text: data.reply, sender: "bot" };
