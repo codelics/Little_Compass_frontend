@@ -22,9 +22,11 @@ function App() {
   const [selectedOption, setSelectedOption] = useState('Chat');
   // Show the hero intro until the first chat message is sent
   const [showIntro, setShowIntro] = useState(true);
+  // Counter to force-remount ChatBox on each Chat-click
+  const [chatResetKey, setChatResetKey] = useState(0);
 
-  const showChat = selectedOption === 'Chat';
-  const showAbout = selectedOption === 'About';
+  const showChat        = selectedOption === 'Chat';
+  const showAbout       = selectedOption === 'About';
   const showInstruction = selectedOption === 'Instruction';
 
   return (
@@ -35,8 +37,14 @@ function App() {
           options={['Chat', 'About', 'Instruction']}
           onSelect={opt => {
             setSelectedOption(opt);
-            // Reset intro only when switching back to Chat
+
+            // 1) Show intro splash whenever we switch back to Chat
             setShowIntro(opt === 'Chat');
+
+            // 2) Force ChatBox to remount (clearing its messages)
+            if (opt === 'Chat') {
+              setChatResetKey(k => k + 1);
+            }
           }}
         />
 
@@ -95,6 +103,7 @@ function App() {
             {/* Chat box */}
             <div className="ChatContainer">
               <ChatBox
+                key={chatResetKey}           // ← Force a full remount on each Chat-click
                 onFirstMessageSent={() => {
                   setShowIntro(false);
                 }}
