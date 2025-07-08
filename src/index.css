@@ -1,3 +1,16 @@
+/* 1. Global box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Fluid root typography */
+html {
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* 3. Your existing body styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 4. Your existing code styles */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
